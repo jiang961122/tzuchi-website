@@ -89,4 +89,269 @@
             gap: 12px;
         }
 
-        .side-nav a { width: 8px; height: 8px; background: #d2d
+        .side-nav a { width: 8px; height: 8px; background: #d2d2d7; border-radius: 50%; }
+
+        /* 區塊通用樣式 */
+        section {
+            padding: 100px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .content-wrap { width: 90%; max-width: 1100px; margin: 0 auto; }
+
+        h2.section-title {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 40px;
+        }
+
+        /* 第一頁：Hero (按鈕置中、標題調整) */
+        .hero h1 { font-size: 4.5rem; color: var(--primary-green); margin-bottom: 5px; font-weight: 700; }
+        .hero h2 { font-size: 1.8rem; color: var(--primary-blue); margin-bottom: 25px; font-weight: 500; opacity: 0.9; }
+        .hero .desc { font-size: 1.25rem; color: #86868b; margin-bottom: 45px; }
+        .cta-group { display: flex; gap: 20px; justify-content: center; }
+        .btn { padding: 14px 35px; border-radius: 980px; font-size: 17px; text-decoration: none; transition: 0.3s; font-weight: 500; }
+        .btn-primary { background: var(--primary-blue); color: #fff; }
+        .btn-secondary { background: var(--primary-green); color: #fff; }
+        .btn:hover { transform: scale(1.05); opacity: 0.9; }
+
+        /* 第二頁：背景趨勢 (文字置中) */
+        .intro { background-color: var(--bg-light); }
+        .intro-text { font-size: 1.45rem; max-width: 850px; margin: 0 auto; color: #515154; text-align: center; }
+
+        /* 第三頁：核心目標 */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
+        .card { padding: 40px; border-radius: 24px; border: 1px solid #d2d2d7; text-align: left; background: #fff; transition: 0.3s; }
+        .card h3 { color: var(--primary-green); margin-bottom: 15px; font-size: 1.5rem; }
+
+        /* 第四頁：申請流程 (詳細說明) */
+        .process { background-color: var(--bg-light); }
+        .flow-container { display: flex; align-items: stretch; justify-content: center; gap: 15px; margin-top: 40px; flex-wrap: wrap; }
+        .flow-step {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 22px;
+            border: 2px solid var(--primary-blue);
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+        .flow-step h4 { color: var(--primary-blue); font-size: 1.4rem; margin-bottom: 15px; text-align: center; border-bottom: 1px solid #f2f2f2; padding-bottom: 12px; }
+        .flow-step ul { padding-left: 20px; font-size: 1rem; color: #444; }
+        .flow-step li { margin-bottom: 10px; list-style-type: disc; }
+        .arrow { font-size: 24px; color: var(--primary-blue); align-self: center; }
+
+        /* 第五頁：申請資訊 (卡片式) */
+        .apply { background-color: #fff; }
+        .apply-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 40px; width: 100%; }
+        .apply-card { background: var(--bg-light); padding: 35px; border-radius: 20px; text-align: center; border: 1px solid #eee; }
+        .apply-card .label { display: block; font-weight: 700; color: var(--primary-blue); font-size: 1.3rem; margin-bottom: 12px; }
+        .alert-box {
+            background: #eef7f2;
+            padding: 25px;
+            border-radius: 18px;
+            border-left: 6px solid var(--primary-green);
+            margin-top: 20px;
+            text-align: center; /* 依需求置中 */
+            width: 100%;
+        }
+
+        /* 第六頁：組織架構 (視覺平衡優化) */
+        .org { background-color: var(--bg-light); }
+        .org-header {
+            background: var(--primary-blue);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 50px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,74,141,0.15);
+        }
+        .org-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            width: 100%;
+        }
+        .org-item {
+            background: white;
+            padding: 20px 10px;
+            border-radius: 15px;
+            border: 1px solid #d2d2d7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            min-height: 90px;
+            transition: 0.3s;
+            color: #333;
+            font-size: 1.05rem;
+        }
+        .org-item:hover { transform: translateY(-3px); border-color: var(--primary-green); color: var(--primary-green); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+
+        footer { padding: 50px 0; background: #f5f5f7; font-size: 0.95rem; color: #86868b; border-top: 1px solid #d2d2d7; }
+
+        /* 行動裝置適應 */
+        @media (max-width: 1024px) {
+            .org-grid { grid-template-columns: repeat(2, 1fr); }
+            .flow-container { flex-direction: column; align-items: center; }
+            .arrow { transform: rotate(90deg); margin: 10px 0; }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .org-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; } /* 手機版隱藏選單簡化介面 */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="logo.png" alt="慈濟大學校徽" class="header-logo">
+                <span>慈濟大學</span>
+            </a>
+            <div class="nav-links">
+                <a href="#hero">首頁</a>
+                <a href="#intro">制度理念</a>
+                <a href="#system">核心目標</a>
+                <a href="#process">流程圖</a>
+                <a href="#apply">申請資訊</a>
+                <a href="#org">組織架構</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="side-nav">
+        <a href="#hero"></a><a href="#intro"></a><a href="#system"></a><a href="#process"></a><a href="#apply"></a><a href="#org"></a>
+    </div>
+
+    <section id="hero" class="hero">
+        <div class="content-wrap">
+            <h1>跨域整合 專業並進</h1>
+            <h2>跨域自主學士</h2>
+            <p class="desc">學生主體、跨域學習<br>提供你志願探索與生涯規劃的支持</p>
+            <div class="cta-group">
+                <a href="#" class="btn btn-secondary">預約諮詢</a>
+                <a href="#process" class="btn btn-primary">申請流程</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="intro" class="intro">
+        <div class="content-wrap">
+            <h2 class="section-title">制度理念</h2>
+            <div class="intro-text">
+                <p>面對全球高等教育多元化、跨域化與永續化的趨勢，本校推動「跨域自主學士」制度，建構以學生為核心的跨域學習平台。</p>
+                <p style="margin-top: 25px;">學生可依據個人興趣與社會需求，自主設計學習歷程，為增加對未來職場應用增能、為斜槓人生加值、為π型人才做準備。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="system" class="system">
+        <div class="content-wrap">
+            <h2 class="section-title">核心目標</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>學習制度</h3>
+                    <p>修讀至少4個領域學程模組(48-60學分)，授予學士學位，形成專屬跨域特色。</p>
+                </div>
+                <div class="card">
+                    <h3>輔導機制</h3>
+                    <p>配置專屬導師與學習規劃師諮詢，整合學校資源，提供歷程追蹤。</p>
+                </div>
+                <div class="card">
+                    <h3>成效評估</h3>
+                    <p>定期進行學習成效評估，必要時協助修正計畫與修課規劃。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process">
+        <div class="content-wrap">
+            <h2 class="section-title">申請流程</h2>
+            <div class="flow-container">
+                <div class="flow-step">
+                    <h4>申請前準備</h4>
+                    <ul>
+                        <li>已修讀至少1門跨域課程</li>
+                        <li>完成UCAN大專校院就業職能平台施測</li>
+                        <li>學生與跨域學習規畫辦公室晤談</li>
+                    </ul>
+                </div>
+                <div class="arrow">→</div>
+                <div class="flow-step">
+                    <h4>正式審查</h4>
+                    <ul>
+                        <li>學生提交「跨域學習計畫書」</li>
+                        <li>擬定學習目標、學程模組及未來發展方向</li>
+                    </ul>
+                </div>
+                <div class="arrow">→</div>
+                <div class="flow-step">
+                    <h4>公告</h4>
+                    <ul>
+                        <li>教務處公告錄取名單</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="apply" class="apply">
+        <div class="content-wrap">
+            <h2 class="section-title">申請資訊</h2>
+            <div class="apply-card-grid">
+                <div class="apply-card">
+                    <span class="label">申請對象</span>
+                    <p>以大一、大二學生為主，大三學生下學期為最後申請期限。</p>
+                </div>
+                <div class="apply-card">
+                    <span class="label">申請時程</span>
+                    <p>本計畫於第二學期結束前一個月開始申請，請務必關注公告。</p>
+                </div>
+                <div class="apply-card">
+                    <span class="label">名額限制</span>
+                    <p>以該年度之大二學生核定員額之10%。</p>
+                </div>
+            </div>
+            <div class="alert-box">
+                <strong>💡 重要提醒：</strong> 針對專業證照或國考資格者，由學校提供事情說明與輔導。
+            </div>
+        </div>
+    </section>
+
+    <section id="org" class="org">
+        <div class="content-wrap">
+            <h2 class="section-title">組織架構</h2>
+            <div class="org-header">跨域學習的好夥伴</div>
+            <div class="org-grid">
+                <div class="org-item">教務處</div>
+                <div class="org-item">跨域學習規畫辦公室</div>
+                <div class="org-item">學院及教學單位</div>
+                <div class="org-item">教學暨學習資源中心</div>
+                <div class="org-item">學務處及生涯發展中心</div>
+                <div class="org-item">通識教育中心</div>
+                <div class="org-item">全球處</div>
+                <div class="org-item">電算中心</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="content-wrap">
+            <p>© 慈濟大學 跨域學習規劃辦公室 版權所有</p>
+        </div>
+    </footer>
+
+</body>
+</html>
